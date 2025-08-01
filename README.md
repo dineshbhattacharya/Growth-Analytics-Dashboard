@@ -25,16 +25,39 @@ A scalable full-stack system to monitor and visualize social and community metri
 
 ---
 
-### 🧱 Project Architecture
+## 📁 Project Structure
 
+```plaintext
 /growth-dashboard
-├── frontend/ # React dashboard UI
-├── backend/ # Node.js REST API with cron jobs
-├── analytics/ # Python FastAPI microservice
-├── bots/ # Discord & Telegram bot scripts
-├── database/ # SQL migrations
-└── .github/ # CI/CD workflows
----
+├── frontend/                   # React application
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── hooks/
+│       ├── pages/
+│       ├── services/           # API client modules
+│       └── App.jsx
+├── backend/                    # Node.js + Express API
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── services/           # Twitter, Discord, Telegram fetchers
+│   │   └── index.js
+│   └── cron/                   # Scheduled jobs
+│       └── dataFetcher.js
+├── analytics/                  # Python FastAPI service
+│   ├── app.py
+│   ├── sentiment.py
+│   └── requirements.txt
+├── bots/                       # Chatbot scripts
+│   ├── discordBot.js
+│   └── telegramBot.js
+├── database/                   # SQL migrations
+│   └── migrations/
+└── .github/
+    └── workflows/              # CI/CD pipelines
+
+```
 
 ### 🚀 Roadmap Summary
 
